@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 
 class AddContact extends React.Component {
+  
   state = {
     name: "",
     email: "",
@@ -14,6 +17,8 @@ class AddContact extends React.Component {
     }
     this.props.addContactHandler(this.state);
     this.setState({ name: "", email: "" });
+    this.props.history.push("/");
+
   };
   render() {
     return (

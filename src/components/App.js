@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { v4 as uuid } from "uuid";
+import { BrowserRouter as  Router, Route, Link, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./Header";
 import AddContact from "./AddContact";
@@ -35,9 +36,20 @@ function App() {
 
   return (
     <div className="ui container">
-      <Header />
-      <AddContact addContactHandler={addContactHandler} />
-      <ContactList contacts={contacts} getContactId={removeContactHandler} />
+      <Router>
+        <Header />
+        <Routes>
+          {/* Use Route components with 'element' prop */}
+          <Route
+            path="/"
+            element={<ContactList contacts={contacts} getContactId={removeContactHandler} />}
+          />
+          <Route
+            path="/add"
+            element={<AddContact addContactHandler={addContactHandler} />}
+          />
+        </Routes>
+      </Router>
     </div>
   );
 }
