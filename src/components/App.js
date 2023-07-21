@@ -15,8 +15,9 @@ function App() {
   }
 
   useEffect(() => {
-    const retrieveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-    if (retrieveContacts) setContacts(retrieveContacts);
+    const retrieveContacts = localStorage.getItem(LOCAL_STORAGE_KEY);
+    const notes = JSON.parse(retrieveContacts);
+    setContacts(notes);
   }, []);
   
 
@@ -24,12 +25,13 @@ function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
   }, [contacts]);
 
+
   // checking the browser localStorage Availibility 
-  // if (typeof localStorage === 'undefined') {
-  //   console.log('localStorage is not available in this browser.');
-  // } else {
-  //   console.log('localStorage is available!');
-  // }
+  if (typeof localStorage === 'undefined') {
+    console.log('localStorage is not available in this browser.');
+  } else {
+    console.log('localStorage is available!');
+  }
   
   return (
     <div>
