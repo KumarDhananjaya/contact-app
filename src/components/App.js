@@ -40,6 +40,11 @@ function App() {
       <Router>
         <Header />
         <Routes>
+          <Route
+              path="/contact/:id"
+              element={<ContactDetail/>}
+
+            />
           {/* Use Route components with 'element' prop */}
           <Route
             path="/"
@@ -49,10 +54,7 @@ function App() {
             path="/add"
             element={<AddContact addContactHandler={addContactHandler} />}
           />
-          <Route
-            path="/contact/:id"
-            Component={ContactDetail}
-          />
+
         </Routes>
       </Router>
     </div>
