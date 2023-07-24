@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 class AddContact extends React.Component {
@@ -17,13 +17,16 @@ class AddContact extends React.Component {
     }
     this.props.addContactHandler(this.state);
     this.setState({ name: "", email: "" });
-    this.props.history.push("/");
-
+    alert("User added successfully")
   };
   render() {
     return (
       <div className="ui main">
-        <h2>Add Contact</h2>
+        <h2>Add Contact 
+        <Link to="/"> 
+        <button className="ui primary button right floated">Contact List</button>
+        </Link>
+        </h2>
         <form className="ui form" onSubmit={this.add}>
           <div className="field">
             <label>Name</label>
