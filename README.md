@@ -1,6 +1,6 @@
 ## This is the react app which demonstrate react functions
 
-It is deployed on netlify [Check Contact Manager App](https://ornate-frangipane-66f365.netlify.app/)
+It is deployed on netlify [Check Contact Manager App here](https://ornate-frangipane-66f365.netlify.app/)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
